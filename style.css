@@ -1,0 +1,117 @@
+body{
+    position: relative;
+}
+/* Header */
+#header {
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: fuchsia;
+    margin-bottom:10px ;
+}
+
+#header div {
+    flex: 1;
+    margin: 0;
+    flex-basis: 100px;
+    padding: 7px;
+}
+
+
+#header h1{
+    text-align: center;
+}
+
+h1{
+    color: chartreuse;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 400%;
+    font-weight: 900;
+}
+
+#header h2 {
+    flex: 2;
+    align-self: center;
+}
+
+h2 {
+    color:black;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+/*body content*/
+#mainBodybackground {
+    background-image: url("images/Diary.jpg"); 
+   background-repeat: no-repeat; 
+    background-size: cover;
+    height: 500px;
+    margin-bottom: 10px;
+    animation: imageSlideshow 10s, infinite;
+    transition: background-image 0.5s ease;
+ }
+.mainbody {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    padding: 50px;
+}
+.mainbody h1 {
+    color: darkred;
+}
+
+
+p, a {
+    color: white;
+}
+
+#add_content{
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+
+q{
+    quotes: initial;
+}
+
+#add_content p{
+    font-size: large;
+    font-family: cursive;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+a {
+    font-size: larger;
+    text-decoration: none;
+
+
+}
+a:hover {
+    color: lawngreen;
+}
+#add_content p:hover{
+    color: blue;
+}
+
+#about {
+    background-color:	rgb(32,32,32);
+    display: flex;
+    padding: 30px;
+    color: whitesmoke;
+    box-shadow: 0px 0px 5px 5px black;
+}
+#about >div{
+    padding: 20px;
+    line-height: 200%;
+    font-size: large;
+    width: 50%;
+    
+}
+#about >div:hover{
+    color: fuchsia;
+}

@@ -1,0 +1,337 @@
+
+
+#header {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin: 20px;
+    height: 100px;
+}
+
+
+#header p{
+    color: greenyellow;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+}
+
+#profile{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    margin:10px;
+}
+
+
+#profile P{
+    color: fuchsia;
+    font-size: larger;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:greenyellow}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+#diaryContent{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#addContent{
+    cursor: pointer;
+    margin: 10px;
+}
+
+#addContent img:hover{
+  background-color: black;
+
+}
+
+#Content{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    position: relative;
+    border-color: palevioletred;
+    border-style: dotted;
+    box-shadow: 0 0 5px 5px pink;
+}
+
+
+#Content:hover {
+    border-color: blue;
+    border-style: dotted;
+    box-shadow: 0 0 5px 5px lightblue;
+}
+
+
+#Content p{
+    align-items: center;
+   
+}
+#Diaryitems {
+    margin: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    max-height: 10em;
+    overflow: hidden;
+
+}
+
+#entrydate{
+    margin: 10px;
+
+}
+
+#viewButton a{
+    color: whitesmoke;
+    background-color: blue;
+    width: 50px;
+   text-align: center;
+   font-size: large;
+   right: 10px;
+   bottom: 2px;
+   position: absolute;
+   background-color: yellowgreen;
+   text-decoration: none;
+}
+
+p{
+    line-height: 1.8;
+    text-indent: 50px;
+}
+#viewButton a:hover{
+    background-color: blue;
+}
+
+/* the popup add entry page*/
+.overlay {
+  top: 0;
+  display: none;
+  position: fixed;
+  left: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+  margin: auto;
+}
+
+
+
+.overlay.active {
+  pointer-events: auto; /* Capture pointer events when the overlay is active (visible) */
+   z-index: 1;
+
+}
+
+
+
+
+#overlay h2 {
+  color:fuchsia;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.modal{
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  margin: 10% auto;
+  max-width: 600px;
+  position: relative;
+  border: 0.5px solid red;
+  box-shadow: 0px 0px 5px 5px fuchsia;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+input-group label[for="contentInput1"],
+.input-group label[for="contentInput2"] {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.input-group input[type="text"],
+.input-group textarea {
+  height: 100%;
+  padding: 10px;
+  font-size: 16px;
+  width: 80px;
+}
+
+
+
+.input-group textarea#contentInput2 {
+  width: 100%;
+  height: 150px; /* Adjust the height as needed for paragraphs */
+  padding: 10px;
+  font-size: 18px; /* Adjust the font size as needed */
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 10px;
+  border: none;
+  background-color:lawngreen;
+  padding: 5px;
+}
+
+button:hover{
+  color: whitesmoke;
+  background-color: blue;
+}
+
+#footer{
+  display: flex;
+}
+#box{
+  align-items: center;
+  margin: auto;
+  background-color:black;
+  color: whitesmoke;
+  width: 30%;
+  padding: 10px;
+  border: 0.5px solid grey;
+  box-shadow: 0px 0px 5px 5px grey;
+  font-family: cursive;
+}
+
+#EntryContent{
+  box-shadow: 0px 0px 5px 5px grey;
+  width: 80%;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  line-height: 300%;
+  background-color: aliceblue;}
+
+  #EntryContent:hover{
+    background-color:rgb(96,96,96) ;
+    color: whitesmoke;
+    box-shadow: 0px 0px 5px 5px grey;
+  }
+
+  /* Account settings*/
+  #accountSettings {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px;
+  align-items: center;
+  border: 0.5px solid grey;
+  width: 50%;
+  box-shadow: 0px 0px 3px 3px grey;
+  border-radius: 50px;
+  }
+
+  #UserProfile, #Nofitications{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 0.5px solid black;
+    background-color: #f9f9f9;
+    align-items: center;
+    border-radius: 30px;
+  }
+
+  #UserProfile>div{
+    margin: 10px;
+    width: 50%;
+    padding: 10px;
+    border: 0.5px solid grey;
+    border-radius: 10px;
+  }
+
+
+  #accProfile{
+    font-weight: bolder;
+    text-align: center;
+    border: none;
+    color: red;
+  }
+
+  #Nofitications{
+    margin-top: 20px;
+    border: 0.5px solid black;
+    
+  }
+  #Nofitications >div{
+    margin: 10px;
+    width: 50%;
+    padding: 10px;
+    border: 0.5px solid grey;
+    border-radius: 10px;
+
+  }
+
+  #acc h2{
+    text-align: center;
+    color: red;
+  }
+
+  #accountSettings >button{
+    color: white;
+    background-color: black;
+    
+  }

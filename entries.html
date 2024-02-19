@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/entries.css">
+</head>
+<body>
+    <div class="display" id="header">
+        <div><p>MyDiary</p></div>
+        <div id="profile">
+            <div class="dropdown">
+                <button class="dropbtn">settings</button>
+                <div class="dropdown-content">
+                <a href="http://127.0.0.1:5500/settings.html">Profile</a>
+                <a href="http://127.0.0.1:5500/settings.html">Notifications</a>
+                <a href="#">Logout</a>
+                </div>
+            </div>
+            <p>Phuier</p> 
+        </div>
+    </div> 
+
+
+  <div class="overlay" id="overlay">
+      <div class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Add your thought and feelings</h2>
+        <form id="contentForm" onsubmit="submitForm(event)">
+          <div class="input-group">
+            <label for="contentInput1">Date:</label>
+            <input type="text" id="contentInput1" placeholder="Date">
+          </div>
+          <div class="input-group">
+            <label for="contentInput2">Content:</label>
+            <textarea id="contentInput2" placeholder="Content"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+  </div>
+
+   
+<diV id="diaryContent">
+
+    <div id="addContent"><img id="imageButton"   onclick="openModal()" src="images/add.png" alt="addContent"></div>
+
+    <div id="Content">
+        <div id="entrydate">date: 22/2/24</div>
+        <div id="Diaryitems"><p></p></div>
+        <div id="viewButton"><a href="url">view</a></div>
+    </div>
+   
+</diV>
+  
+<div id="footer">
+  <div class="box-shadow" id="box">
+    <p>So, grab a pen and let the paper be your confidante  
+      your very own therapist who never charges by the hour,
+       judges your questionable decisions, or asks, 'How does that make you feel?</p>
+  </dv>      
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
