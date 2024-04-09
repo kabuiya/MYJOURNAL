@@ -7,16 +7,21 @@
 </head>
 <body>
   <div id="loginform">
-    <form>
-        Username: <input type="text" name="username" required />
-        <br>
-        Email: <input type="email" name="email" required />
-        <br>
-        Password: <input type="password" name="password1" required />
-        Confirm-Password: <input type="password" name="password2" required />
-        <input type="submit" value="Signup">
+    <form id="signupForm">
+      <div id="formError" class="response-message"></div>
+      <br>
+      Username: <input type="text" name="username" id="usernameInput"/>
+      <div id="usernameResponse" class="response-message"></div>
+      <br>
+      Email: <input type="email" name="email" id="emailInput"/>
+      <div id="emailResponse" class="response-message"></div>
+      Password: <input type="password" name="password1" id="passwordInput1"/>
+      Confirm-Password: <input type="password" name="password2" id="passwordInput2"/>
+      <div id="passwordResponse" class="response-message"></div>
+      <input type="submit" value="Signup">
     </form>
     <p><a href="http://127.0.0.1:5500/login.html">Login</a></p>
   </div>
+  <script src="scripts/register.js"></script>
 </body>
 </html>

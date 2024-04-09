@@ -14,29 +14,24 @@
                 <button class="dropbtn">settings</button>
                 <div class="dropdown-content">
                 <a href="http://127.0.0.1:5500/settings.html">Profile</a>
-                <a href="http://127.0.0.1:5500/settings.html">Notifications</a>
-                <a href="#">Logout</a>
+                <button onclick="userlogout()">Logout</button>
                 </div>
             </div>
-            <p>username</p> 
         </div>
     </div> 
 
 
   <div class="overlay" id="overlay">
       <div class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <span  id="closebtn" class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="response"></div>
         <h2>Add your thought and feelings</h2>
-        <form id="contentForm" onsubmit="submitForm(event)">
-          <div class="input-group">
-            <label for="contentInput1">Date:</label>
-            <input type="text" id="contentInput1" placeholder="Date">
-          </div>
+        <form id="contentForm">
           <div class="input-group">
             <label for="contentInput2">Content:</label>
             <textarea id="contentInput2" placeholder="Content"></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <input type="submit" value="submit">
         </form>
       </div>
   </div>
@@ -46,11 +41,11 @@
 
     <div id="addContent"><img id="imageButton"   onclick="openModal()" src="images/add.png" alt="addContent"></div>
 
-    <div id="Content">
-        <div id="entrydate">date: diary Entry</div>
-        <div id="Diaryitems"><p></p></div>
+    <!-- <div id="Content">
+        <div id="entrydate"></div>
+        <div id="Diaryitems"></div>
         <div id="viewButton"><a href="url">view</a></div>
-    </div>
+    </div> -->
    
 </diV>
   
@@ -61,6 +56,6 @@
        judges your questionable decisions, or asks, 'How does that make you feel?</p>
   </dv>      
 </div>
-  <script src="script.js"></script>
+  <script src="scripts/entries.js"></script>
 </body>
 </html>

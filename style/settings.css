@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#acc {
+    width: 80%;
+    margin: auto;
+}
+
+#header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+#accountSettings {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#UserProfile, #Nofitications {
+    margin-bottom: 20px;
+}
+
+#accProfile {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#deletebtn {
+    background-color: #f44336;
+}
+
+#deletebtn:hover {
+    background-color: #d32f2f;
+}

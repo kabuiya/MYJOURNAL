@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +7,19 @@
 </head>
 <body>
   <div id="loginform">
-    <form>
-      Email: <input type="email" name="email" required />
+    <form id="form">
+      <div id="formError" class="response-message"></div>
       <br>
-      Password: <input type="password" name="password" required />
+      Username: <input type="username" name="username" id="usernameInput"/>
+      <div id="usernameResponse" class="response-message"></div>
+      <br>
+      Password: <input type="password" name="password" id="passwordInput"/>
+      <div id="passwordResponse" class="response-message"></div>
+      <input type="submit" value="Login">
     </form>
-    <input type="submit" value="Login">
+    
     <p><a href="http://127.0.0.1:5500/signup.html">Signup</a></p>
-    <p><a href="url">Forget Password?</a></p>
   </div>
+  <script src="scripts/login.js"></script>
 </body>
 </html>

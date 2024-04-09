@@ -58,6 +58,29 @@ a {
   text-decoration: none;
 }
 
+#formError,
+#usernameResponse,
+#emailResponse,
+#passwordResponse,
 a:hover{
   color: red;
+}
+
+/* CSS for cancel icon */
+.cancel-icon {
+  visibility: hidden;
+  cursor: pointer;
+  color:red;
+}
+
+.response-message {
+  position: relative;
+}
+
+.response-message:empty + .cancel-icon {
+  visibility: hidden;
+}
+
+.response-message:not(:empty) + .cancel-icon {
+  visibility: visible;
 }

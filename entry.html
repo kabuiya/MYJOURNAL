@@ -10,14 +10,15 @@
   <div class="display" id="header">
     <p>MyDiary</p>
   </div>
+
   <div  class="box-shadow" id="EntryContent">
     <div id="entrydate"></div>
     <div  id="editableContent" contenteditable=True"></div>
     <div>
-        <button onclick="makeEditable()" >Edit</button>
-        <button>Delete</button>
+        <button  id="editButton" onclick="makeEditable()" >Edit</button>
+        <button  onclick="deleteEntry()">Delete</button>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="scripts/entry.js"></script>
 </body>
 </html>

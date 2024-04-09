@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/entries.css">
+  <link rel="stylesheet" href="style/settings.css">
 </head>
 <body>
+
     <div id="acc">
         <div class="display" id="header">
             <p>MyDiary</p>
@@ -15,25 +15,13 @@
             <div id="accountSettings">
                 <div id="UserProfile"> 
                 <div id="accProfile">USER PROFILE</div>
-                    Username:<div></div>
-                    Email:<div></div>
-                    Password:<div></div>
-                    Entries:<div></div>
+                    Username:<div id="name"></div>
+                    Email:<div id="email"></div>
             </div>
-
-            <div id="Nofitications">
-                 <div id="accProfile">Notifications</div>
-                <div> 
-                    <form>
-                        <label for="reminderTime">Set Daily Reminder Time:</label>
-                        <input type="time" id="reminderTime" name="reminderTime" required>
-                        <button type="button" onclick="setDailyReminder()">Set Reminder</button>
-                    </form>
-                </div>
-            </div>
-            <button> Delete Account</button>
+            <button id="deletebtn" onclick="deleteAccount()"> Delete Account</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts/settings.js"></script>
 </body>
 </html>
+   
