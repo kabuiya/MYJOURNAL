@@ -81,7 +81,6 @@ function deleteEntry() {
             if (!response.ok) {
                 throw new Error('Failed to delete entry');
             }
-            alert('Entry deleted successfully.');
             window.location.href = window.location.href = 'http://127.0.0.1:5500/entries.html';
         })
         .catch(error => {
