@@ -5,7 +5,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const entry_id = urlParams.get('entry_id');
 
 // Fetch the entry data using the retrieved entry_id
-const entryUrl = `http://127.0.0.1:5000/api/v1/get_entry/${entry_id}`;
+const entryUrl = `https://diaryendpoints.fly.dev/api/v1/get_entry/${entry_id}`;
 fetch(entryUrl, {
     method: 'GET',
     headers: {
@@ -15,7 +15,7 @@ fetch(entryUrl, {
 })
 .then(response =>{
   if (response.status === 401){
-    window.location.href = 'http://127.0.0.1:5500/login.html';
+    window.location.href = 'login.html';
     throw new Error('Unauthorized');
   }else{
    return response.json();
@@ -43,7 +43,7 @@ function makeEditable(){
 } else {
 
     var modifiedContent = edit.innerText; 
-    fetch(`http://127.0.0.1:5000/api/v1/update_entry/${entry_id}`, {
+    fetch(`https://diaryendpoints.fly.dev/api/v1/update_entry/${entry_id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ function makeEditable(){
         if (!response.ok) {
             throw new Error('Failed to save content');
         }
-        window.location.href = window.location.href = 'http://127.0.0.1:5500/entries.html';
+        window.location.href = window.location.href = 'entries.html';
     })
     .catch(error => {
         alert('Error saving content:', error);
@@ -70,7 +70,7 @@ function deleteEntry() {
     var confirmDelete = confirm("Are you sure you want to delete this entry?");
     if (confirmDelete) {
         // Send a request to the backend to delete the entry
-        fetch(`http://127.0.0.1:5000/api/v1/delete_entry/${entry_id}`, {
+        fetch(`https://diaryendpoints.fly.dev/api/v1/delete_entry/${entry_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ function deleteEntry() {
             if (!response.ok) {
                 throw new Error('Failed to delete entry');
             }
-            window.location.href = window.location.href = 'http://127.0.0.1:5500/entries.html';
+            window.location.href = window.location.href = 'entries.html';
         })
         .catch(error => {
            alert('Error deleting entry:', error);

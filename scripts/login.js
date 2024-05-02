@@ -27,7 +27,7 @@ let userdata = {
     'username': username,
     'password': password
   };
-  let url = 'http://127.0.0.1:5000/api/v1/login';
+  let url = 'https://diaryendpoints.fly.dev/api/v1/login';
   fetch(url, {
     method: 'POST',
     headers: {
@@ -49,7 +49,7 @@ let userdata = {
       // Save the token to local storage and redirect user to entries page
       localStorage.setItem('token', data.message.token);
       console.log(localStorage.getItem('token'));
-      window.location.href = 'http://127.0.0.1:5500/entries.html'
+      window.location.href = 'entries.html'
     }
   })
   .catch(error => {

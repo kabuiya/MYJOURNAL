@@ -31,7 +31,7 @@ addContent.addEventListener("submit", function(event){
     'content':content
   }
 
-  let url = 'http://127.0.0.1:5000/api/v1/add_entries';
+  let url = 'https://diaryendpoints.fly.dev/api/v1/add_entries';
     fetch(url, {
       method: 'POST',
       headers: {
@@ -57,7 +57,7 @@ addContent.addEventListener("submit", function(event){
 });
 
 
-let url = 'http://127.0.0.1:5000/api/v1/get_entries';
+let url = 'https://diaryendpoints.fly.dev/api/v1/get_entries';
 fetch(url, {
   method: 'GET',
   headers: {
@@ -67,7 +67,7 @@ fetch(url, {
 })
 .then(response => {
   if (response.status === 401){
-    window.location.href = 'http://127.0.0.1:5500/index.html';
+    window.location.href = 'index.html';
     throw new Error('Unauthorized');
   }else{
     return response.json();
@@ -113,7 +113,7 @@ fetch(url, {
 
 //logout
 function userlogout() {
-  fetch('http://127.0.0.1:5000/api/v1/logout', {
+  fetch('https://diaryendpoints.fly.dev/api/v1/logout', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ function userlogout() {
       if (!response.ok) {
           throw new Error('error');
       }
-      window.location.href =  'http://127.0.0.1:5500/index.html';
+      window.location.href =  'index.html';
   })
   .catch(error => {
       alert('error occurred. Try again later')
@@ -132,5 +132,5 @@ function userlogout() {
 }
 
 function viewEntry(entry_id){
-  window.location.href = `http://127.0.0.1:5500/entry.html?entry_id=${entry_id}`;
+  window.location.href = `entry.html?entry_id=${entry_id}`;
 }

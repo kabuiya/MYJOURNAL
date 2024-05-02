@@ -14,7 +14,7 @@
         'email_address': email,
         'password': password2
       };
-      let url = 'http://127.0.0.1:5000/api/v1/register';
+      let url = 'https://diaryendpoints.fly.dev/api/v1/register';
       fetch(url, {
         method: 'POST',
         headers: {
@@ -33,7 +33,7 @@
             document.getElementById('formError').innerText = data.error.details;
           }
         } else if(data.message.success) {
-          window.location.href = 'http://127.0.0.1:5500/login.html'
+          window.location.href = 'login.html'
         }
       })
       .catch(error => {

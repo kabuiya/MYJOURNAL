@@ -1,5 +1,5 @@
 //display profile
-const entryUrl = 'http://127.0.0.1:5000/api/v1/profile';
+const entryUrl = 'https://diaryendpoints.fly.dev/api/v1/profile';
 fetch(entryUrl, {
     method: 'GET',
     headers: {
@@ -25,7 +25,7 @@ fetch(entryUrl, {
 
 
 //delete user acc
-let del_url ='http://127.0.0.1:5000/api/v1/del_account'
+let del_url ='https://diaryendpoints.fly.dev/api/v1/del_account'
 function deleteAccount() {
   var confirmDelete = confirm("Are you sure you want to delete your acc?");
   if (confirmDelete){
@@ -41,7 +41,7 @@ function deleteAccount() {
               throw new Error('Failed to delete acc');
           }
           console.log('acc deleted successfully.');
-          window.location.href =  'http://127.0.0.1:5500/index.html';
+          window.location.href =  'index.html';
       })
       .catch(error => {
           console.error('Error deleting:', error);
