@@ -1,5 +1,6 @@
 //display profile
-const entryUrl = 'https://diaryendpoints.fly.dev/api/v1/profile';
+// const entryUrl = 'https://diaryendpoints.fly.dev/api/v1/profile';
+const entryUrl = 'http://127.0.0.1:5000/api/v1/profile';
 fetch(entryUrl, {
     method: 'GET',
     headers: {
@@ -9,7 +10,7 @@ fetch(entryUrl, {
 })
 .then(response =>{
   if (response.status === 401){
-    window.location.href = '/index.html';
+    location.replace('index.html');
     throw new Error('Unauthorized');
   }else{
    return response.json();
@@ -25,7 +26,8 @@ fetch(entryUrl, {
 
 
 //delete user acc
-let del_url ='https://diaryendpoints.fly.dev/api/v1/del_account'
+// let del_url ='https://diaryendpoints.fly.dev/api/v1/del_account'
+let del_url ='http://127.0.0.1:5000/api/v1/del_account'
 function deleteAccount() {
   var confirmDelete = confirm("Are you sure you want to delete your acc?");
   if (confirmDelete){
@@ -38,10 +40,12 @@ function deleteAccount() {
       })
       .then(response => {
           if (!response.ok) {
+              if (response.status === 401) {
+                  location.replace('login.html');
+              }
               throw new Error('Failed to delete acc');
           }
-          console.log('acc deleted successfully.');
-          window.location.href =  'index.html';
+          location.replace('login.html');
       })
       .catch(error => {
           console.error('Error deleting:', error);

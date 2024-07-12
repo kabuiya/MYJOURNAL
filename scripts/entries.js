@@ -23,6 +23,64 @@ function closeModal() {
 }
 
 
+// let url = 'https://diaryendpoints.fly.dev/api/v1/get_entries';
+  let url = 'http://127.0.0.1:5000/api/v1/get_entries'
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    },
+  })
+    .then(response => {
+      if (response.status === 401) {
+        window.location.href = 'index.html';
+        throw new Error('Unauthorized');
+      } else {
+        return response.json();
+      }
+    })
+    .then(data => {
+      let par_node = document.getElementById('diaryContent')
+      for (let entry of data['user_entries']) {
+        let entry_id = entry[0]
+        let entry_content = entry[1];
+        let entry_date = entry[2];
+      
+
+        let content = document.createElement('div');
+        content.id = 'Content';
+
+        let ent_date = document.createElement('div');
+        ent_date.id = 'entrydate';
+        ent_date.innerText = entry_date;
+
+        let cont = document.createElement('div');
+        cont.id = 'Diaryitems';
+        cont.innerText = entry_content;
+
+        let btn = document.createElement('div');
+        btn.id = 'viewButton';
+        btn.innerHTML = `<a href="#" onclick="viewEntry(${entry_id})">View</a>`;
+      
+
+        // Append child nodes to the content node
+        content.appendChild(ent_date);
+        content.appendChild(cont);
+        content.appendChild(btn)
+
+        // Append content node to the parent node
+        par_node.appendChild(content);
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+
+
+
+
+
 const addContent = document.getElementById('contentForm');
 addContent.addEventListener("submit", function(event){
   event.preventDefault();
@@ -31,7 +89,8 @@ addContent.addEventListener("submit", function(event){
     'content':content
   }
 
-  let url = 'https://diaryendpoints.fly.dev/api/v1/add_entries';
+  // let url = 'https://diaryendpoints.fly.dev/api/v1/add_entries';
+  let url = 'http://127.0.0.1:5000/api/v1/add_entries';
     fetch(url, {
       method: 'POST',
       headers: {
@@ -46,7 +105,8 @@ addContent.addEventListener("submit", function(event){
     if(data.Error){
       document.getElementById('response').innerText = data.Error;
     }
-    else if(data.success){
+    else if (data.success) {
+      console.log(data.success)
       closeModal();
       location.reload();
     }
@@ -57,63 +117,14 @@ addContent.addEventListener("submit", function(event){
 });
 
 
-let url = 'https://diaryendpoints.fly.dev/api/v1/get_entries';
-fetch(url, {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-  },
-})
-.then(response => {
-  if (response.status === 401){
-    window.location.href = 'index.html';
-    throw new Error('Unauthorized');
-  }else{
-    return response.json();
-  }
-})
-.then(data => {
-  let par_node = document.getElementById('diaryContent')
-    for (let entry of data['user_entries']){
-      let entry_id = entry[0]
-      let entry_content = entry[1];
-      let entry_date = entry[2];
-      
 
-      let content = document.createElement('div');
-      content.id = 'Content'; 
-
-      let ent_date = document.createElement('div');
-      ent_date.id = 'entrydate';
-      ent_date.innerText = entry_date;
-
-      let cont = document.createElement('div');
-      cont.id = 'Diaryitems';
-      cont.innerText = entry_content;
-
-      let btn = document.createElement('div');
-      btn.id = 'viewButton';
-      btn.innerHTML = `<a href="#" onclick="viewEntry(${entry_id})">View</a>`;
-      
-
-      // Append child nodes to the content node
-      content.appendChild(ent_date);
-      content.appendChild(cont);
-      content.appendChild(btn)
-
-      // Append content node to the parent node
-      par_node.appendChild(content);
-  }
-  })
-.catch(error => {
-  console.log('Error:', error);
-});
- 
+  
 
 //logout
 function userlogout() {
-  fetch('https://diaryendpoints.fly.dev/api/v1/logout', {
+  // fetch('https://diaryendpoints.fly.dev/api/v1/logout', 
+  fetch ('http://127.0.0.1:5000/api/v1/logout',
+  {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -121,16 +132,22 @@ function userlogout() {
       }
   })
   .then(response => {
-      if (!response.ok) {
+    if (!response.ok) {
+      if (response.status === 401) {
+          window.location.replace('login.html')
+        }
           throw new Error('error');
       }
-      window.location.href =  'index.html';
+    window.location.href = 'index.html';
+    localStorage.removeItem('token')
   })
   .catch(error => {
       alert('error occurred. Try again later')
   });
 }
 
+
 function viewEntry(entry_id){
   window.location.href = `entry.html?entry_id=${entry_id}`;
 }
+
